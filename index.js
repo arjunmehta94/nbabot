@@ -13,7 +13,7 @@ app.get('/', function(req, res){
 });
 
 //Facebook webhook
-app.get('/webhook', function(res, req) {
+app.get('/webhook', function(req, res) {
     if (req.query['hub.verify_token'] === 'nbabot_verify_token') {
         res.send(req.query['hub.challenge']);
     } else {
