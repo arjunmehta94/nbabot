@@ -35,13 +35,13 @@ app.post('/webhook', function(req, res) {
 });
 
 //generic function sending message
-function sendMessage(recepientId, message) {
+function sendMessage(recipientId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: process.env.PAGE_ACCESS_TOKEN},
         method: 'POST',
         json: {
-            recepient: {id: recepientId},
+            recipient: {id: recipientId},
             message: message
         }
     }, function(error, response, body) {
